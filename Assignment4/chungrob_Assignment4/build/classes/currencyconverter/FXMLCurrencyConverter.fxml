@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="vbox" prefHeight="200.0" prefWidth="400.0" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="currencyconverter.CurrencyConverterController">
+
+    <top>
+        <VBox alignment = "CENTER">
+            <ImageView fx:id="imgMain" preserveRatio="true">
+                <image>
+                    <Image url="@res/canada.bmp" />   
+                </image>
+            </ImageView>
+            <TextField fx:id="txtCdnAmount" />
+        </VBox>
+
+    </top>
+    
+    <left>
+        <VBox>
+            <fx:define>
+                <ToggleGroup fx:id = "grpCurrency"/>
+            </fx:define>
+            <children>
+                <Label fx:id = "lblCurrency" text = "Currency"/>
+                <RadioButton fx:id = "radUS" text = "US &#36;"
+                             toggleGroup = "$grpCurrency"/>
+                <RadioButton fx:id = "radUK" text = "UK &#163;"
+                             toggleGroup = "$grpCurrency"/>
+                <RadioButton fx:id = "radEuro" text = "Euros &#128;"
+                             toggleGroup = "$grpCurrency"/>
+                <RadioButton fx:id = "radRupee" text = "Rupee &#x20B9;"
+                             toggleGroup = "$grpCurrency"/>
+                <RadioButton fx:id = "radYuan" text = "Yuan &#165;"
+                             toggleGroup = "$grpCurrency"/>
+                <RadioButton fx:id = "radPesos" text = "Pesos &#36;"
+                             toggleGroup = "$grpCurrency"/>
+            </children>
+        </VBox>
+    </left>
+    
+    <right>
+        <VBox alignment="CENTER">
+            <Label fx:id="lblExchangeRate" />
+        </VBox>
+    </right>
+    
+    <!--    <center>
+        <VBox alignment = "BOTTOM_CENTER">
+            <Button fx:id="btnConvert" text="_Convert" />
+        </VBox>
+    </center>-->
+    
+    <bottom>
+        <VBox alignment="CENTER">
+            <Button fx:id="btnConvert" text="_Convert" />
+            <Label fx:id="lblAmount" />
+        </VBox>
+    </bottom>
+    
+</BorderPane>
